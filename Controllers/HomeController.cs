@@ -40,5 +40,12 @@ namespace Project.Controllers
 
             return View();
         }
+
+        public ActionResult ProfilePage()
+        {
+            ViewBag.Message = "Your profile page.";
+
+            return View();
+        }
     }
 }

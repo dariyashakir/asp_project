@@ -5,32 +5,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - приложение ASP.NET</title>
-    @Styles.Render("~/Content/Style.css?v1")
+    @Styles.Render("~/Content/Style.css?v3")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div class="header">
         <div class="header-inner">
-            <div class="avatar-div">
+            <div class="avatar-div" onclick="document.location='../Home/ProfilePage'">
                 <img class="pf-avatar" />
             </div>
-            <button class="home-button" href="#">Home</button>
+            <button class="home-button" onclick="document.location='../Home/Index'">Home</button>
             <div class="auth-buttons">
-                <button class="auth-button">Sign up</button>
-                <button class="auth-button">Sign in</button>
+                <button class="auth-button" onclick="document.location='../Home/SignupPage'">Sign up</button>
+                <button class="auth-button" onclick="document.location='../Home/LoginPage'">Sign in</button>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - мое приложение ASP.NET</p>
-        </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <footer>
+        <p>&copy; @DateTime.Now.Year - мое приложение ASP.NET</p>
+    </footer>
 </body>
 </html>

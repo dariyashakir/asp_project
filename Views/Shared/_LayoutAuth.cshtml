@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - приложение ASP.NET</title>
-    @Styles.Render("~/Content/Style.css")
+    @Styles.Render("~/Content/Style.css?v#")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -14,19 +14,18 @@
             <div class="avatar-div">
                 <img class="pf-avatar" />
             </div>
-            <button class="home-button" href="#">Home</button>
+            <button class="home-button" onclick="document.location='../Home/Index'">Home</button>
             <div class="auth-buttons">
-                <button class="auth-button" href="#">Sign out</button>
+                <button class="auth-button" onclick="document.location='#'">Sign out</button>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - мое приложение ASP.NET</p>
-        </footer>
     </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - мое приложение ASP.NET</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
